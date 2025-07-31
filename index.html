@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shafinaj Jerin Asha | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-img-vertical">
+                <img src="profile pic.jpg" alt="Shafinaj Jerin Asha" class="profile-pic-vertical" />
+            </div>
+            <div class="hero-text">
+                <h1>Hi, I'm <span class="highlight">Shafinaj Jerin Asha</span></h1>
+                <p class="tagline">ICT Student | Web Developer | Tech Enthusiast</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn">View Projects</a>
+                    <a href="Asha(CV).pdf" class="btn-outline" target="_blank">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-fixed">
+        <div class="container navbar-content">
+            <a href="#home" class="navbar-logo">
+                <img src="profile pic.jpg" alt="Asha Logo" class="navbar-profile-pic" />
+                <span class="logo-text">Asha</span>
+            </a>
+            <div class="navbar-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <form class="navbar-search" onsubmit="event.preventDefault(); searchInfo();">
+                <input type="text" id="searchInput" placeholder="Search..." aria-label="Search" />
+                <button type="submit">🔍</button>
+            </form>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="home" class="intro">
+            <h2>Welcome!</h2>
+            <p>Hello! I'm a passionate ICT student from MBSTU, Tangail. I love designing websites, solving problems, and continuously learning new technologies. Please explore my portfolio and feel free to reach out!</p>
+        </section>
+        <section id="about" class="about-section">
+            <h2>About Me</h2>
+            <p>I am Shafinaj Jerin Asha, an ICT student at MBSTU, Tangail. I am passionate about web development, technology, and creative problem solving. I enjoy learning new skills and collaborating on exciting projects.</p>
+        </section>
+        <section id="skills" class="skills-section">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li><strong>Languages:</strong> C, C++, Python, JavaScript</li>
+                <li><strong>Web Development:</strong> HTML5, CSS3, Bootstrap, React (basic)</li>
+                <li><strong>Tools & Platforms:</strong> Git, GitHub, VS Code, Linux</li>
+                <li><strong>Other Skills:</strong> Problem Solving, Communication, Teamwork</li>
+            </ul>
+            <h2>Learning & Interests</h2>
+            <ul>
+                <li>Exploring React.js and modern JavaScript frameworks</li>
+                <li>Building responsive web designs</li>
+                <li>Open-source contributions</li>
+                <li>Competitive programming</li>
+            </ul>
+        </section>
+        <section id="projects" class="projects-section">
+            <h2>Projects</h2>
+            <div class="projects">
+                <article class="project-card">
+                    <h3>Project 1: Hotel Management Project</h3>
+                    <p>A project to automate hotel operations including booking, room management, and customer service.</p>
+                    <a href="https://github.com/Jerinasha/SD-project.git" target="_blank">View on GitHub</a>
+                </article>
+                <article class="project-card">
+                    <h3>Project 2: Financial Management System</h3>
+                    <p>A system designed to track income, expenses, and generate financial reports for personal or business use.</p>
+                </article>
+                <article class="project-card">
+                    <h3>Project 3: Weather Forecasting Using Arduino</h3>
+                    <p>To build a simple weather forecasting system using Arduino that collects and displays real-time data like temperature, humidity, and pressure using sensors for short-term weather prediction.</p>
+                </article>
+            </div>
+        </section>
+        <section id="contact" class="contact-section">
+            <h2>Get In Touch</h2>
+            <p>If you'd like to connect, collaborate, or just say hello — feel free to reach out via email or through my profiles below.</p>
+            <ul class="contact-info">
+                <li><strong>Email:</strong> <a href="mailto:jerinasha321@gmail.com">jerinasha321@gmail.com</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/Jerinasha" target="_blank">github.com/Jerinasha</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jerin-asha-568835357/" target="_blank">Jerin Asha</a></li>
+            </ul>
+            <h3>Or send me a message:</h3>
+            <form action="#" method="post" class="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message..." required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <script>
+    // Search functionality for navbar
+    function searchInfo() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const sections = document.querySelectorAll('main.container section');
+        let found = false;
+        sections.forEach(section => {
+            section.classList.remove('search-highlight');
+            if (section.textContent.toLowerCase().includes(query) && query.length > 0) {
+                section.classList.add('search-highlight');
+                section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                found = true;
+            }
+        });
+        if (!found && query.length > 0) {
+            alert('No matching information found.');
+        }
+    }
+    </script>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 Shafinaj Jerin Asha | All rights reserved</p>
+        </div>
+    </footer>
+
+</body>
+</html>
